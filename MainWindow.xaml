@@ -1,0 +1,71 @@
+﻿<Window x:Class="Circustrein.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Circustrein"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <DockPanel>
+                    <StackPanel HorizontalAlignment="Center" Width="150">
+                        <TextBlock Margin="10" FontSize="15" HorizontalAlignment="Center">Herbivore</TextBlock>
+                        <DockPanel HorizontalAlignment="Center">
+                            <Button Click="AddSmallHerbivore">Small</Button>
+                            <Button Click="AddMediumHerbivore" Margin="10,0">Medium</Button>
+                            <Button Click="AddLargeHerbivore">Large</Button>
+                        </DockPanel>
+                        <TextBlock Margin="10" FontSize="15" HorizontalAlignment="Center">Carnivore</TextBlock>
+                        <DockPanel HorizontalAlignment="Center">
+                            <Button Click="AddSmallCarnivore">Small</Button>
+                            <Button Click="AddMediumCarnivore" Margin="10,0">Medium</Button>
+                            <Button Click="AddLargeCarnivore">Large</Button>
+                        </DockPanel>
+                        <DockPanel Margin="0,30" HorizontalAlignment="Center">
+                            <Button Width="50" Margin="10,0" Click="StartTrain">Start</Button>
+                            <Button Width="50" Click="ListReset">Reset</Button>
+                        </DockPanel>
+                    </StackPanel>
+                    <ListBox x:Name="LbCurrentAnimals" Width="225" BorderBrush="Black" BorderThickness="2px" HorizontalAlignment="Right"></ListBox>
+                </DockPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <!-- presets go here, make 3 buttons to automatically make sets -->
+                <StackPanel Margin="20" HorizontalAlignment="Center">
+                    <TextBlock>4 Herbi, 1 large, 2 medium, 1 small. 1 Carni, Large</TextBlock>
+                    <Button Margin="0,5" Click="PresetOneLoader">Load Preset</Button>
+                    <TextBlock>4 Herbi, 2 Large, 1 Medium, 1 Small. 4 Carni, 1 Large, 1 Medium</TextBlock>
+                    <Button Margin="0,5" Click="PresetTwoLoader">Load Preset</Button>
+                    <TextBlock>2 Herbi, 1 Large, 1 Medium. 4 Carni, 2 Large, 1 Medium, 1 Small</TextBlock>
+                    <Button Margin="0,5" Click="PresetThreeLoader">Load Preset</Button>
+                </StackPanel>
+                
+                
+            </Grid>
+            
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <!-- Show result information here with the usage of listviews and such -->
+            <DockPanel>
+                <ListBox x:Name="LbCartView" Width="300" BorderBrush="Black" BorderThickness="2px" HorizontalAlignment="Left"></ListBox>
+                <ListView></ListView>
+            </DockPanel>
+            
+        </Grid>
+        
+    </Grid>
+</Window>
